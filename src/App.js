@@ -10,10 +10,15 @@ function App() {
     signInWithPopup(authentication,provider)
     .then((re)=> {
       console.log(re);
+      
+      localStorage.setItem("token", re.user.accessToken);
+      var accessTokenres = localStorage.getItem("token");
+      alert(accessTokenres);
     })
     .catch((err)=>{
       console.log(err);
     })
+
   }
   
   return (
